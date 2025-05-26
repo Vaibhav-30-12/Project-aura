@@ -13,7 +13,7 @@ from langgraph.graph import END, StateGraph, START
 from langgraph.graph.message import add_messages
 from typing import Annotated, TypedDict
 import json
-os.environ["OPENAI_API_KEY"] = "your_openai_api_key_here"
+os.environ["OPENAI_API_KEY"] = "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"
 
 
 # --------------------------------------------HELPER FUNCTIONS-------------------------------------------------------------------------
@@ -50,19 +50,15 @@ llm_4o_mini= ChatOpenAI(model="gpt-4o-mini",)
 
 llm= ChatOpenAI(model="gpt-4o")
 
-class SupervisorReply(BaseModel):
-    """
-    response from the supervisor
-    """
-    content:str= Field(description="The content of the response")
-    fallback: str = Field(description="A fallback flag when the conversation ends. Can be only YES or NO")
-
 class AgentReply(BaseModel):
-    """
-    response from the agent
-    """
-    content: str = Field(description="The content of the response")
-    return_summary: str = Field(description="A flag to end the conversation and return a summary. Can be only YES or NO")
+    """A response from an agent."""
+    content: str = Field(description="The content of the response.")
+    fallback: str = Field(description="A fallback flag when the conversation ends. Can be only YES or NO")
+    
+class SupervisorReply(BaseModel):
+    """A response from the supervisor agent."""
+    content: str = Field(description="The content of the response.")
+    return_summary: str = Field(description="A flag to end the conversation and return the summary. Can be only YES or NO")
 
 
 structured_llm_mini=llm_4o_mini.with_structured_output(AgentReply)
@@ -180,8 +176,8 @@ def return_2(state):
         print('Returning Agent 1\n')
         return "agent_1"
 
-graph.add_conditional_edge("agent_1", return_1)
-graph.add_conditional_edge("agent_2", return_2)
+graph.add_conditional_edges("agent_1", return_1)
+graph.add_conditional_edges("agent_2", return_2)
 
 
 def returnsummary(state):
@@ -193,9 +189,9 @@ def returnsummary(state):
         print('Returning Agent 1\n')
         return "agent_1"
 
-graph.add_conditional_edge("supervisor", returnsummary)
+graph.add_conditional_edges("supervisor", returnsummary)
 
-app.graph.compile()
+app=graph.compile()
 
 
 #------------------------------------MAIN FUNCTION-------------------------------------------------------------
