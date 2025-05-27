@@ -13,7 +13,7 @@ from langgraph.graph import END, StateGraph, START
 from langgraph.graph.message import add_messages
 from typing import Annotated, TypedDict
 import json
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "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"
 
 
 # --------------------------------------------HELPER FUNCTIONS-------------------------------------------------------------------------
