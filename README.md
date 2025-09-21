@@ -1,11 +1,11 @@
-# 🚀 AURA — Autonomous MARAG for Financial Analysis
+# 🚀 CLARUS — Collaborative LLM Agents for Reliable Understanding in Finance
 
-![GitHub last commit](https://img.shields.io/github/last-commit/Vaibhav-30-12/Project-aura)
-![GitHub repo size](https://img.shields.io/github/repo-size/Vaibhav-30-12/Project-aura)
-![GitHub issues](https://img.shields.io/github/issues/Vaibhav-30-12/Project-aura)
-![GitHub stars](https://img.shields.io/github/stars/Vaibhav-30-12/Project-aura?style=social)
+![GitHub last commit](https://img.shields.io/github/last-commit/Vaibhav-30-12/Project-CLARUS)
+![GitHub repo size](https://img.shields.io/github/repo-size/Vaibhav-30-12/Project-CLARUS)
+![GitHub issues](https://img.shields.io/github/issues/Vaibhav-30-12/Project-CLARUS)
+![GitHub stars](https://img.shields.io/github/stars/Vaibhav-30-12/Project-CLARUS?style=social)
 
-**Project Aura** is a Multi-Agent Retrieval-Augmented Generation (MARAG) system focused on financial Q\&A and automated financial report generation. It combines a Supervisor (LLM Compiler-inspired), Adaptive RAG retrieval (with TableVision), a multi-agent Financial Analyst group, a Math/Code executor, and a Report Generation tool — all with Human-in-the-Loop (HITL) and Responsible-AI guardrails.
+**Project CLARUS** is a Multi-Agent Retrieval-Augmented Generation (MARAG) system focused on financial Q\&A and automated financial report generation. It combines a Supervisor (LLM Compiler-inspired), Adaptive RAG retrieval (with TableVision), a multi-agent Financial Analyst group, a Math/Code executor, and a Report Generation tool — all with Human-in-the-Loop (HITL) and Responsible-AI guardrails.
 
 ---
 
@@ -29,7 +29,7 @@
 
 ## 📌 Overview
 
-Aura is designed to answer complex financial queries and produce professional, data-driven reports by combining retrieval, reasoning, and generation. It improves retrieval for tricky data formats (especially tables) with a custom **TableVision** mode and uses dynamic planning, parallel task execution, and minimal human intervention to boost accuracy and reduce hallucination.
+CLARUS is designed to answer complex financial queries and produce professional, data-driven reports by combining retrieval, reasoning, and generation. It improves retrieval for tricky data formats (especially tables) with a custom **TableVision** mode and uses dynamic planning, parallel task execution, and minimal human intervention to boost accuracy and reduce hallucination.
 
 ---
 
@@ -92,7 +92,7 @@ Aura is designed to answer complex financial queries and produce professional, d
 ## 📂 Repository Layout
 
 ```
-Project-aura/
+Project-CLARUS/
 ├── __pycache__/
 ├── server/                  # backend / pipeline orchestration
 ├── .env.example             # environment variables template
@@ -116,8 +116,8 @@ Project-aura/
 **Install**
 
 ```bash
-git clone https://github.com/Vaibhav-30-12/Project-aura.git
-cd Project-aura
+git clone https://github.com/Vaibhav-30-12/Project-CLARUS.git
+cd Project-CLARUS
 python -m venv .venv
 source .venv/bin/activate   # macOS/Linux
 .venv/Scripts/Activate.ps1  # Windows
