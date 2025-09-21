@@ -13,8 +13,8 @@ from langgraph.graph import END, StateGraph, START
 from langgraph.graph.message import add_messages
 from typing import Annotated, TypedDict
 import json
-os.environ["OPENAI_API_KEY"] = ""
-
+os.environ["OPENAI_API_KEY"] = "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"
+# os.environ["OPENAI_API_KEY"] = "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"
 
 # --------------------------------------------HELPER FUNCTIONS-------------------------------------------------------------------------
 
@@ -228,7 +228,7 @@ def finance_group(category,context,topic)-> str:
     
     # start the conversation
     print("starting conversation...\n")
-    result=app.invoke(state)
+    result=app.invoke(state,config={"recursion_limit": 50})
     print("Conversation ended.\n")
     return result["summary"]
 
